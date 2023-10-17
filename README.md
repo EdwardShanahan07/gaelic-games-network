@@ -1,39 +1,82 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Gaelic Games Network
+The Gaelic Games Network (GGN) is a dynamic and interactive social media platform designed specifically for enthusiasts and followers of Gaelic Athletic Association (GAA) events, teams, and topics. This application provides a space for GAA fans to connect, discuss, and engage with the vibrant GAA community.
 
-Welcome,
+## Contents
+- [Gaelic Games Network](#gaelic-games-network)
+  - [Contents](#contents)
+  - [User Experience](#user-experience)
+    - [Project Objective](#project-objective)
+    - [User Stories](#user-stories)
+    - [Sprint 1](#sprint-1)
+    - [Sprint 2](#sprint-2)
+    - [Sprint 3](#sprint-3)
+    - [Sprint 4](#sprint-4)
+    - [Sprint 5](#sprint-5)
+  - [Database Design](#database-design)
+  - [Languages and Frameworks](#languages-and-frameworks)
+    - [Languages](#languages)
+    - [Frameworks](#frameworks)
+    - [Libraries Used](#libraries-used)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## User Experience
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+### Project Objective
+Design and develop a social media application, Gaelic Games Network (GGN), that enables users to create and share posts related to Gaelic Athletic Association (GAA) events, teams, and topics. The app should allow users to tag posts with relevant hashtags, like, comment, and follow other users. The backend will be implemented using Django REST API, while the front end will be built using React, ensuring a seamless and engaging user experience. The objective is to provide a platform for GAA enthusiasts to connect, discuss, and engage with the GAA community.
 
-## Codeanywhere Reminders
+### User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+#### Sprint 1
+1. As a **User**, I can **view a navbar on every page** so that **I can navigate between pages**
+2. As a **User**, I can **navigate through pages quickly**  so that **I can view content without pages refreshing**
+3. As a **User**, I can **create an account**  so that **I can gain full features of the website**
+4. As a **User**, I can **sign in**  so that **I can regain site full features**
+5. As a **User**, I can **tell if I’m logged in** so that **gain full functionality of the website**
+6. As a **User**, I can **see sign-in and sign-out pages**  so that **I can sign in/sign up**
+7. As a **User**, I can **view avatars** so that **I can identify other other users**
+8. As a **User**, I can **have my logged-in status until I choose to log out** so that **my experience isn't compromised**
 
-`python3 -m http.server`
+### Sprint 2
+1. As a **Logged In User**, I can **create a post**  so that **I can share my latest updated**
+2. As a **User**, I can **view a post** so that **I can learn more about that post**
+3. As a **Logged In User**, I can **like a post** so that **I can show my support to other users**
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Sprint 3
+1. As a **User**, I can **view the most recent posts in order by the most recently created**  so that **keep up to date with new content**
+2. As a **User**, I can **search for posts that have tags** so that **I can find posts related to my search**
+3. As a **Logged In User**, I can see a list of posts from users that I follow so that I can keep up to date with their posts
+4. As a **User**, I can **keep scrolling through posts automatically** so that **I don’t have to click next page**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### Sprint 4
+1. As a **User**, I can **view a pos** so that **I can view a list of comments on posts**
+2. As a **Post Owner**, I can **edit my post** so that **I can make any corrections or update the post**
+3. As a **Logged In User**, I can **post a comment on a post** so that **I can share my opinion on the post**
+4. As a **User**, I can **see the date on a comment** so that **I know how old the comment is**
+5. As a **User**, I can **comment on a post** so that **I can see what other users thought about the post**
+6. As a **Comment Owner**, I can **delete my own comment on a post** so that **I can control my own comments**
+7. As a **comment Owner**, I can **edit a comment on a post** so that **I can correct or update the comment**
 
-`http_server`
+### Sprint 5
+1. As a **User**, I can **view other users** so that **I can see their posts and learn more about them**
+2. As a **User**, I can **see a list of the most followed user profiles** so that **I can see which profiles are popular**
+3. As a **Logged In User**, I can **see a list of all the users** so that **I can see who I can follow**
+4. As a **User**, I can **see stats on a specific user profile page** so that **I can learn more about the user**
+5. As a **Logged In User**, I can **follow and unfollow other users** so that **I can see or remove posts by specific users**
+6. As a **Logged In User**, I can **edit my profile** so that **I can keep my profile update**
+7. As a **User**, I can **update my username and password** so that **I can change my displayed name and keep my account secure**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Database Design
+![](./readme-assets/images/erd.png)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Languages and Frameworks
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Languages
+- Python3
+- JavaScript
+- HTML and CSS
 
-To log into the Heroku toolbelt CLI:
+### Frameworks
+- Django
+- React
+- Bootstrap
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+### Libraries Used
