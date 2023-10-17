@@ -7,7 +7,7 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
   - [User Experience](#user-experience)
     - [Project Objective](#project-objective)
     - [User Stories](#user-stories)
-    - [Sprint 1](#sprint-1)
+      - [Sprint 1](#sprint-1)
     - [Sprint 2](#sprint-2)
     - [Sprint 3](#sprint-3)
     - [Sprint 4](#sprint-4)
@@ -80,3 +80,6 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 - Bootstrap
 
 ### Libraries Used
+- django-3.2.22
+- django-cloudinary-storage-0.3.0
+- Pillow-8.2.0
