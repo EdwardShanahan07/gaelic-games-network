@@ -83,8 +83,12 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 - django-3.2.22
 - django-cloudinary-storage-0.3.0
 - Pillow-8.2.0
-- djangorestframework
+- djangorestframework==3.12.4
 - django-filter-23.2
 - dj-rest-auth==2.1.9
 - dj-rest-auth[with_social]
 - djangorestframework-simplejwt==4.7.2
+- dj_database_url
+- gunicorn
+- django-cors-headers
+- psycopg2
