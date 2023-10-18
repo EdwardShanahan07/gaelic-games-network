@@ -1,5 +1,6 @@
 import styles from './App.module.css';
 import { Route, Switch } from "react-router-dom";
+import "./api/axiosDefaults";
 
 import NavBar from './components/NavBar';
 import Home from './pages/home/Home';

@@ -20,6 +20,9 @@ const NavBar = () => {
                         <Link to="/signup" className="nav-link">
                             Sign Up
                         </Link>
+                        <Link to="/signin" className="nav-link">
+                            Sign In
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
