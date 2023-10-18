@@ -94,3 +94,4 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 - psycopg2
 - urllib3==1.26.15
 - react==17.0.2
+- react-bootstrap
