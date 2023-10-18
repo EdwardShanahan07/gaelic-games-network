@@ -10,18 +10,16 @@ const NavBar = () => {
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
                 <Link className="text-decoration-none" exact to="/">
-                    <Navbar.Brand className="fw-bold" href="#home">
+                    <Navbar.Brand className="fw-bold">
                         GGN
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link exact to="/test">
-                            <Nav.Link href="#home">Discover</Nav.Link>
+                        <Link to="/signup" className="nav-link">
+                            Sign Up
                         </Link>
-                        <Nav.Link href="#link">Sign In</Nav.Link>
-                        <Nav.Link href="#link">Sign Up</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
