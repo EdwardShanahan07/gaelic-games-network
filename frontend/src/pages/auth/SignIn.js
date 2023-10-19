@@ -13,7 +13,10 @@ import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignUp.module.css";
 
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+
 const SignIn = () => {
+    const setCurrentUser = useSetCurrentUser();
     const [signInData, setSignInData] = useState({
         username: "",
         password: "",
@@ -26,8 +29,9 @@ const SignIn = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post("/dj-rest-auth/login/", signInData);
+            const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             history.push("/");
+            setCurrentUser(data.user);
         } catch (err) {
             setErrors(err.response?.data);
         }
