@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Avatar from "../components/Avatar";
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import axios from "axios";
 import {
-  useCurrentUser,
-  useSetCurrentUser,
+    useCurrentUser,
+    useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
@@ -21,7 +23,7 @@ const NavBar = () => {
             console.log(err);
         }
 
-        console.log(setCurrentUser())
+        console.log(setCurrentUser());
     };
 
     const loggedInLinks =
@@ -29,6 +31,7 @@ const NavBar = () => {
             <Link to="/" className="nav-link" onClick={handleSignOut}>
                 Sign Out
             </Link>
+            <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
         </>;
 
     const loggedOutLinks =
