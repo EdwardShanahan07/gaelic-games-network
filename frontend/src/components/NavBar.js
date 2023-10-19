@@ -22,16 +22,38 @@ const NavBar = () => {
         } catch (err) {
             console.log(err);
         }
-
-        console.log(setCurrentUser());
     };
+
+    const loggedOutLogo =
+        <>
+            <Link className="text-decoration-none" exact to="/">
+                <Navbar.Brand className="fw-bold">
+                    GGN
+                </Navbar.Brand>
+            </Link>
+        </>;
+
+    const loggedInLogo =
+        <>
+            <Link className="text-decoration-none" exact to="/discover">
+                <Navbar.Brand className="fw-bold">
+                    GGN
+                </Navbar.Brand>
+            </Link>
+        </>;
 
     const loggedInLinks =
         <>
+            <Link to="/discover" className="nav-link" onClick={handleSignOut}>
+                Discover
+            </Link>
+            <Link to="/feed" className="nav-link" onClick={handleSignOut}>
+                Feed
+            </Link>
             <Link to="/" className="nav-link" onClick={handleSignOut}>
                 Sign Out
             </Link>
-            <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+            <Avatar src={currentUser?.profile_image} height={40} />
         </>;
 
     const loggedOutLinks =
@@ -45,13 +67,9 @@ const NavBar = () => {
         </>;
 
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="shadow-sm rounded">
             <Container>
-                <Link className="text-decoration-none" exact to="/">
-                    <Navbar.Brand className="fw-bold">
-                        GGN
-                    </Navbar.Brand>
-                </Link>
+                {currentUser ? loggedInLogo : loggedOutLogo}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">

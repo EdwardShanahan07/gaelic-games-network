@@ -30,7 +30,7 @@ const SignIn = () => {
         event.preventDefault();
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-            history.push("/");
+            history.push("/discover");
             setCurrentUser(data.user);
         } catch (err) {
             setErrors(err.response?.data);
