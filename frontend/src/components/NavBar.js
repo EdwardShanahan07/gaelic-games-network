@@ -11,10 +11,14 @@ import {
     useCurrentUser,
     useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
+
     const handleSignOut = async () => {
         try {
             await axios.post("dj-rest-auth/logout/");
@@ -67,10 +71,12 @@ const NavBar = () => {
         </>;
 
     return (
-        <Navbar expand="lg" className="shadow-sm rounded">
+        <Navbar expand="lg" className="shadow-sm rounded"
+            expanded={expanded}>
             <Container>
                 {currentUser ? loggedInLogo : loggedOutLogo}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle ref={ref} aria-controls="basic-navbar-nav"
+                    onClick={() => setExpanded(!expanded)} />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         {currentUser ? loggedInLinks : loggedOutLinks}
