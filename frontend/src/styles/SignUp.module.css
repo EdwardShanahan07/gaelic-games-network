@@ -1,5 +1,14 @@
-.Image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.SignInCol {
+    height: 350px;
+}
+
+.SignInCol {
+    height: 500px;
 }

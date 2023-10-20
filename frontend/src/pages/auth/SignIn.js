@@ -44,13 +44,12 @@ const SignIn = () => {
         });
     };
     return (
-        <div>
-            <Row >
-                <Col className="my-auto p-0 p-md-2" md={6}>
-                    <Container className={` p-4 `}>
-                        <h1 >sign in</h1>
+            <Row className={styles.Container}>
+                <Col className={`${styles.SignIn} p-0 p-md-2`} md={6}>
+                    <Container className={`p-5 shadow-lg`}>
+                        <h1 className="mb-3">Sign In</h1>
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group controlId="username">
+                            <Form.Group controlId="username" className="mb-3">
                                 <Form.Label className="d-none">Username</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -67,7 +66,7 @@ const SignIn = () => {
                                 </Alert>
                             ))}
 
-                            <Form.Group controlId="password">
+                            <Form.Group controlId="password" className="mb-3">
                                 <Form.Label className="d-none">Password</Form.Label>
                                 <Form.Control
                                     type="password"
@@ -93,17 +92,16 @@ const SignIn = () => {
                                     {message}
                                 </Alert>
                             ))}
+
+                            <Link className={`d-block mt-3 text-decoration-none text-secondary`} to="/signup">
+                                Don't have an account? <span className="text-primary">Sign up now!</span>
+                            </Link>
                         </Form>
-                    </Container>
-                    <Container className={`mt-3`}>
-                        <Link to="/signup">
-                            Don't have an account? <span>Sign up now!</span>
-                        </Link>
                     </Container>
                 </Col>
                 <Col
                     md={6}
-                    className={`my-auto d-none d-md-block p-2`}
+                    className={`${styles.SignIn} my-auto d-none d-md-block p-2`}
                 >
                     <Image
                         className={styles.Image}
@@ -111,7 +109,6 @@ const SignIn = () => {
                     />
                 </Col>
             </Row>
-        </div>
     );
 };
 

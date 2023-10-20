@@ -42,13 +42,13 @@ const SignUp = () => {
         }
     };
     return (
-        <Row>
-            <Col className="my-auto py-2 p-md-2" md={6}>
-                <Container className={`p-4 `}>
-                    <h1>sign up</h1>
+        <Row className={styles.Container}>
+            <Col className={`${styles.SignUpCol} my-auto py-2 p-md-2 shadow-lg`} md={6}>
+                <Container className={`p-5`}>
+                    <h1 className="mb-3">Sign Up</h1>
 
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="username">
+                        <Form.Group controlId="username" className="mb-3">
                             <Form.Label className="d-none">username</Form.Label>
                             <Form.Control
                                 type="text"
@@ -64,7 +64,7 @@ const SignUp = () => {
                             </Alert>
                         ))}
 
-                        <Form.Group controlId="password1">
+                        <Form.Group controlId="password1" className="mb-3">
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control
                                 type="password"
@@ -80,7 +80,7 @@ const SignUp = () => {
                             </Alert>
                         ))}
 
-                        <Form.Group controlId="password2">
+                        <Form.Group controlId="password2" className="mb-3">
                             <Form.Label className="d-none">Confirm password</Form.Label>
                             <Form.Control
                                 type="password"
@@ -106,14 +106,13 @@ const SignUp = () => {
                                 {message}
                             </Alert>
                         ))}
+
+                        <Link className="d-block mt-3 text-secondary text-decoration-none" to="/signin">
+                        Already have an account? <span className="text-primary">Sign in</span>
+                        </Link>
                     </Form>
                 </Container>
 
-                <Container>
-                    <Link to="/signin">
-                        Already have an account? <span>Sign in</span>
-                    </Link>
-                </Container>
             </Col>
             <Col
                 md={6}
