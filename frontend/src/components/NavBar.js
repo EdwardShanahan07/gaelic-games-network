@@ -48,9 +48,6 @@ const NavBar = () => {
 
     const loggedInLinks =
         <>
-            <Link to="/discover" className="nav-link">
-                Discover
-            </Link>
             <Link to="/feed" className="nav-link">
                 Feed
             </Link>
@@ -62,6 +59,9 @@ const NavBar = () => {
 
     const loggedOutLinks =
         <>
+            <Link to="/discover" className="nav-link">
+                Discover
+            </Link>
             <Link to="/signup" className="nav-link">
                 Sign Up
             </Link>
