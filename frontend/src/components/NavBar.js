@@ -44,10 +44,10 @@ const NavBar = () => {
 
     const loggedInLinks =
         <>
-            <Link to="/discover" className="nav-link" onClick={handleSignOut}>
+            <Link to="/discover" className="nav-link">
                 Discover
             </Link>
-            <Link to="/feed" className="nav-link" onClick={handleSignOut}>
+            <Link to="/feed" className="nav-link">
                 Feed
             </Link>
             <Link to="/" className="nav-link" onClick={handleSignOut}>
