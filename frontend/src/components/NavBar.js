@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Avatar from "../components/Avatar";
+import styles from "../styles/NavBar.module.css";
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -48,6 +49,9 @@ const NavBar = () => {
 
     const loggedInLinks =
         <>
+            <Link to="/posts/create" className="nav-link">
+                <i class={`fa-solid fa-circle-plus ${styles.Icon}`}></i>
+            </Link>
             <Link to="/feed" className="nav-link">
                 Feed
             </Link>

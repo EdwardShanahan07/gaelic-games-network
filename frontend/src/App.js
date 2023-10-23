@@ -8,6 +8,7 @@ import SignUp from './pages/auth/SignUp';
 import SignIn from './pages/auth/SignIn';
 import Discover from './components/Discover';
 
+
 import Container from "react-bootstrap/Container";
 
 function App() {
