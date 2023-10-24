@@ -95,3 +95,4 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 - urllib3==1.26.15
 - react==17.0.2
 - react-bootstrap
+- react-infinite-scroll-component

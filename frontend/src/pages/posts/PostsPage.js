@@ -50,6 +50,7 @@ function PostsPage({ message, filter = "" }) {
                 <p>Popular profiles mobile</p>
                 <i className={`fas fa-search`} />
                 <Form
+
                     onSubmit={(event) => event.preventDefault()}
                 >
                     <Form.Control
@@ -88,7 +89,7 @@ function PostsPage({ message, filter = "" }) {
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
                 <p>Popular profiles for desktop</p>
             </Col>
-        </Row >
+        </Row>
     );
 }
 
