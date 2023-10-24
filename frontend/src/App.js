@@ -6,7 +6,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import SignUp from './pages/auth/SignUp';
 import SignIn from './pages/auth/SignIn';
-import Discover from './components/Discover';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
