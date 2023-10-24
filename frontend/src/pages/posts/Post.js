@@ -15,6 +15,7 @@ const Post = (props) => {
         comments_count,
         likes_count,
         like_id,
+        save_id,
         tag,
         content,
         image,
@@ -57,6 +58,40 @@ const Post = (props) => {
             console.log(err);
         }
     };
+
+    const handleSave = async () => {
+        try {
+            const { data } = await axiosRes.post("/saves/", { post: id });
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, save_id: data.id }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleUnSave = async () => {
+        try {
+            await axiosRes.delete(`/saves/${save_id}/`);
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, save_id: null }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+
 
     return (
         <Card >
@@ -109,6 +144,30 @@ const Post = (props) => {
                         <i className="far fa-comments" />
                     </Link>
                     {comments_count}
+
+                    {is_owner ? (
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>You can't save your own post</Tooltip>}
+                        >
+                            <i class="fa-regular fa-bookmark"></i>
+                        </OverlayTrigger>
+                    ) : save_id ? (
+                        <span onClick={handleUnSave}>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </span>
+                    ) : currentUser ? (
+                        <span onClick={handleSave}>
+                            <i class="fa-regular fa-bookmark"></i>
+                        </span>
+                    ) : (
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Log in to save posts!</Tooltip>}
+                        >
+                            <i class="fa-regular fa-bookmark"></i>
+                        </OverlayTrigger>
+                    )}
                 </div>
             </Card.Body>
         </Card>

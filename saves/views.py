@@ -9,7 +9,7 @@ class SaveList(generics.ListCreateAPIView):
     List saves or create a like if logged in.
     """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    serializer_class = LikeSerializer
+    serializer_class = SaveSerializer
     queryset = Save.objects.all()
 
     def perform_create(self, serializer):

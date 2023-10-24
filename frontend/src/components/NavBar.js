@@ -58,6 +58,9 @@ const NavBar = () => {
             <Link to="/feed" className="nav-link">
                 Feed
             </Link>
+            <Link to="/saved" className="nav-link">
+                Saved
+            </Link>
             <Link to="/" className="nav-link" onClick={handleSignOut}>
                 Sign Out
             </Link>

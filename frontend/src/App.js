@@ -45,6 +45,16 @@ function App() {
                             />
                         )}
                     />
+                    <Route
+                        exact
+                        path="/saved"
+                        render={() => (
+                            <PostsPage
+                                message="No results found. Adjust the search keyword or save a post."
+                                filter={`saves__owner__profile=${profile_id}&ordering=-saves__created_at&`}
+                            />
+                        )}
+                    />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
                     <Route exact path="/posts/:id" render={() => <PostPage />} />
                     <Route render={() => <p>Page not found!</p>} />
