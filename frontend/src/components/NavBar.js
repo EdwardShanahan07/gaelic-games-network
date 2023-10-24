@@ -52,6 +52,9 @@ const NavBar = () => {
             <Link to="/posts/create" className="nav-link">
                 <i class={`fa-solid fa-circle-plus ${styles.Icon}`}></i>
             </Link>
+            <Link to="/discover" className="nav-link">
+                Discover
+            </Link>
             <Link to="/feed" className="nav-link">
                 Feed
             </Link>

@@ -9,11 +9,17 @@ import SignIn from './pages/auth/SignIn';
 import Discover from './components/Discover';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostPage from "./pages/posts/PostPage";
+import PostsPage from "./pages/posts/PostsPage";
+
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 
 import Container from "react-bootstrap/Container";
 
+
 function App() {
+    const currentUser = useCurrentUser();
+    const profile_id = currentUser?.profile_id || "";
     return (
         <div className={styles.App}>
             <NavBar />
@@ -22,7 +28,23 @@ function App() {
                     <Route exact path="/" render={() => <Home />} />
                     <Route exact path="/signup" render={() => <SignUp />} />
                     <Route exact path="/signin" render={() => <SignIn />} />
-                    <Route exact path="/discover" render={() => <Discover />} />
+                    <Route
+                        exact
+                        path="/discover"
+                        render={() => (
+                            <PostsPage message="No results found. Adjust the search keyword." />
+                        )}
+                    />
+                    <Route
+                        exact
+                        path="/feed"
+                        render={() => (
+                            <PostsPage
+                                message="No results found. Adjust the search keyword or follow a user."
+                                filter={`owner__followed__owner__profile=${profile_id}&`}
+                            />
+                        )}
+                    />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
                     <Route exact path="/posts/:id" render={() => <PostPage />} />
                     <Route render={() => <p>Page not found!</p>} />

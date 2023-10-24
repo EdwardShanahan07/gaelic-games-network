@@ -76,8 +76,8 @@ const Post = (props) => {
                 <Card.Img src={image} alt={tag} />
             </Link>
             <Card.Body>
-                {tag && <Card.tag className="text-center">{tag}</Card.tag>}
                 {content && <Card.Text>{content}</Card.Text>}
+                {tag && <Card.Text className="">#{tag.toLowerCase()}</Card.Text>}
                 <div >
                     {is_owner ? (
                         <OverlayTrigger
@@ -88,11 +88,11 @@ const Post = (props) => {
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
-                            <i className={`fas fa-heart `} />
+                            <i className={`fas fa-heart`} />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleLike}>
-                            <i className={`far fa-heart `} />
+                            <i className={`far fa-heart`} />
                         </span>
                     ) : (
                         <OverlayTrigger
