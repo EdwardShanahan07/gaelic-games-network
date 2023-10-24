@@ -9,7 +9,7 @@ import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 
 import Upload from "../../assets/upload.png";
-import Asset from "../../components/Asset"
+import Asset from "../../components/Asset";
 
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -29,18 +29,18 @@ const PostCreateForm = () => {
 
     const handleChange = (event) => {
         setPostData({
-        ...postData,
-        [event.target.name]: event.target.value,
+            ...postData,
+            [event.target.name]: event.target.value,
         });
     };
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
-        URL.revokeObjectURL(image);
-        setPostData({
-            ...postData,
-            image: URL.createObjectURL(event.target.files[0]),
-        });
+            URL.revokeObjectURL(image);
+            setPostData({
+                ...postData,
+                image: URL.createObjectURL(event.target.files[0]),
+            });
         }
     };
 
@@ -61,90 +61,90 @@ const PostCreateForm = () => {
         } catch (err) {
             console.log(err);
             if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
+                setErrors(err.response?.data);
             }
         }
-        };
+    };
 
     return (
-            <Form onSubmit={handleSubmit}>
-                <Form.Group>
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
                 <Form.Label>Post</Form.Label>
                 <Form.Control
-                as="textarea"
-                placeholder="Share what's on your mind...."
-                rows={6}
-                name="content"
-                value={content}
-                onChange={handleChange}
-                resize="none"
+                    as="textarea"
+                    placeholder="Share what's on your mind...."
+                    rows={6}
+                    name="content"
+                    value={content}
+                    onChange={handleChange}
+                    resize="none"
                 />
             </Form.Group>
             {errors?.content?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
-                {message}
+                    {message}
                 </Alert>
             ))}
             <Form.Group>
                 <Form.Label>Tag</Form.Label>
                 <Form.Control
-                type="text"
-                placeholder="hurling2024"
-                name="tag"
-                value={tag}
-                onChange={handleChange}
+                    type="text"
+                    placeholder="hurling2024"
+                    name="tag"
+                    value={tag}
+                    onChange={handleChange}
                 />
             </Form.Group>
             {errors?.title?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
-                {message}
+                    {message}
                 </Alert>
             ))}
 
             <Form.Group className="text-center">
-              {image ? (
-                <>
-                  <figure>
-                    <Image  src={image} rounded />
-                  </figure>
-                  <div>
+                {image ? (
+                    <>
+                        <figure>
+                            <Image src={image} rounded />
+                        </figure>
+                        <div>
+                            <Form.Label
+                                className={` btn`}
+                                htmlFor="image-upload"
+                            >
+                                Change the image
+                            </Form.Label>
+                        </div>
+                    </>
+                ) : (
                     <Form.Label
-                      className={` btn`}
-                      htmlFor="image-upload"
+                        className="d-flex justify-content-center"
+                        htmlFor="image-upload"
                     >
-                      Change the image
+                        <Asset
+                            src={Upload}
+                            message="Click or tap to upload an image"
+                        />
                     </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    message="Click or tap to upload an image"
-                  />
-                </Form.Label>
-              )}
+                )}
 
-              <Form.File
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage}
-                ref={imageInput}
-              />
+                <Form.File
+                    id="image-upload"
+                    accept="image/*"
+                    onChange={handleChangeImage}
+                    ref={imageInput}
+                />
             </Form.Group>
             {errors?.image?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
             ))}
 
-            <Button>Share</Button>
+            <Button type="submit">Share</Button>
         </Form>
-    )
-}
+    );
+};
 
 
 export default PostCreateForm;

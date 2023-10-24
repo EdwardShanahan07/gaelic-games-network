@@ -7,7 +7,8 @@ import Home from './components/Home';
 import SignUp from './pages/auth/SignUp';
 import SignIn from './pages/auth/SignIn';
 import Discover from './components/Discover';
-import PostCreateForm from './pages/posts/PostCreateForm'
+import PostCreateForm from './pages/posts/PostCreateForm';
+import PostPage from "./pages/posts/PostPage";
 
 
 import Container from "react-bootstrap/Container";
@@ -23,6 +24,7 @@ function App() {
                     <Route exact path="/signin" render={() => <SignIn />} />
                     <Route exact path="/discover" render={() => <Discover />} />
                     <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+                    <Route exact path="/posts/:id" render={() => <PostPage />} />
                     <Route render={() => <p>Page not found!</p>} />
                 </Switch>
             </Container>
