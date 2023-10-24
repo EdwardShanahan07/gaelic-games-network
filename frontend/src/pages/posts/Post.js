@@ -72,12 +72,14 @@ const Post = (props) => {
                     </div>
                 </Media>
             </Card.Body>
-            <Link to={`/posts/${id}`}>
-                <Card.Img src={image} alt={tag} />
-            </Link>
             <Card.Body>
                 {content && <Card.Text>{content}</Card.Text>}
                 {tag && <Card.Text className="">#{tag.toLowerCase()}</Card.Text>}
+
+                {image ? <Link to={`/posts/${id}`}>
+                    <Card.Img src={image} alt={tag} />
+                </Link> : <></>
+                }
                 <div >
                     {is_owner ? (
                         <OverlayTrigger
