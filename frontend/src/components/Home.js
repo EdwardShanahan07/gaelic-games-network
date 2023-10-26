@@ -9,12 +9,14 @@ import {
 } from "react-bootstrap";
 
 import styles from "../styles/Home.module.css";
+import { useRedirect } from "../hooks/useRedirect";
 
 const Home = () => {
+    useRedirect("loggedIn");
     return (
         <div className={styles.Container}>
             <Row className={styles.Container}>
-                <Col className="d-flex justify-content-center flex-column mt-5"md={6}>
+                <Col className="d-flex justify-content-center flex-column mt-5" md={6}>
                     <h1>Gaelic Games Network!</h1>
                     <p className="text-secondary">Discover, Connect, and Celebrate the Passion for Gaelic Games with Gaelic Games Network -
                         Your Hub for All Things GAA!
