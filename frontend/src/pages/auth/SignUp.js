@@ -12,8 +12,10 @@ import {
 } from "react-bootstrap";
 import styles from "../../styles/SignUp.module.css";
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUp = () => {
+    useRedirect("loggedIn");
     const [signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
@@ -108,7 +110,7 @@ const SignUp = () => {
                         ))}
 
                         <Link className="d-block mt-3 text-secondary text-decoration-none" to="/signin">
-                        Already have an account? <span className="text-primary">Sign in</span>
+                            Already have an account? <span className="text-primary">Sign in</span>
                         </Link>
                     </Form>
                 </Container>
