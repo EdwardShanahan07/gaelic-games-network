@@ -31,7 +31,7 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
     const { id } = useParams();
 
-    const setProfileData = useSetProfileData();
+    const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
     const { pageProfile } = useProfileData();
 
     const [profile] = pageProfile.results;
@@ -83,20 +83,6 @@ function ProfilePage() {
                             <div>{profile?.following_count}</div>
                             <div>following</div>
                         </Col>
-                        <Col xs={3} className="my-2">
-                            <div>{profile?.description}</div>
-                            <div>description</div>
-                        </Col>
-
-                        <Col xs={3} className="my-2">
-                            <div>{profile?.county_team}</div>
-                            <div>County Team</div>
-                        </Col>
-
-                        <Col xs={3} className="my-2">
-                            <div>{profile?.club_team}</div>
-                            <div>Club Team</div>
-                        </Col>
                     </Row>
                 </Col>
                 <Col lg={3} className="text-lg-right">
@@ -105,14 +91,14 @@ function ProfilePage() {
                         (profile?.following_id ? (
                             <Button
                                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                                onClick={() => { }}
+                                onClick={() => handleUnfollow(profile)}
                             >
                                 unfollow
                             </Button>
                         ) : (
                             <Button
                                 className={`${btnStyles.Button} ${btnStyles.Black}`}
-                                onClick={() => { }}
+                                onClick={() => handleFollow(profile)}
                             >
                                 follow
                             </Button>
