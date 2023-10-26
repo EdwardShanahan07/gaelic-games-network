@@ -42,7 +42,7 @@ const ProfileEditForm = () => {
             if (currentUser?.profile_id?.toString() === id) {
                 try {
                     const { data } = await axiosReq.get(`/profiles/${id}/`);
-                    const { name, description, image, club_team } = data;
+                    const { name, description, image, club_team, county_team } = data;
                     setProfileData({ name, description, image, club_team, county_team });
                 } catch (err) {
                     console.log(err);
@@ -69,6 +69,7 @@ const ProfileEditForm = () => {
         formData.append("name", name);
         formData.append("description", description);
         formData.append("club_team", club_team);
+        formData.append("county_team", county_team);
         if (imageFile?.current?.files[0]) {
             formData.append("image", imageFile?.current?.files[0]);
         }
@@ -116,15 +117,31 @@ const ProfileEditForm = () => {
                 />
             </Form.Group>
 
-            <Form.group>
-                <Form.control as="" />
-            </Form.group>
-
             {errors?.club_team?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
             ))}
+
+            <Form.Group>
+                <Form.Label>County Team</Form.Label>
+                <Form.Control
+                    as="input"
+                    value={county_team}
+                    onChange={handleChange}
+                    name="county_team"
+                    rows={7}
+                />
+            </Form.Group>
+
+
+
+            {errors?.county_team?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
+
             <Button
                 className={`${btnStyles.Button} ${btnStyles.Blue}`}
                 onClick={() => history.goBack()}

@@ -73,6 +73,8 @@ function ProfilePage() {
                     <p>{profile?.description}</p>
 
                     <p>Club Team: {profile?.club_team}</p>
+
+                    <p>County Team: {profile?.county_team}</p>
                 </Col>
                 <Col lg={6}>
                     <h3 className="m-2">{profile?.owner}</h3>

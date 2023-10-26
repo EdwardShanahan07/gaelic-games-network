@@ -2,41 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
-COUNTY_CHOICES = (
-    ('Antrim', 'Antrim'),
-    ('Armagh', 'Armagh'),
-    ('Carlow', 'Carlow'),
-    ('Cavan', 'Cavan'),
-    ('Clare', 'Clare'),
-    ('Cork', 'Cork'),
-    ('Derry', 'Derry'),
-    ('Donegal', 'Donegal'),
-    ('Down', 'Down'),
-    ('Dublin', 'Dublin'),
-    ('Fermanagh', 'Fermanagh'),
-    ('Galway', 'Galway'),
-    ('Kerry', 'Kerry'),
-    ('Kildare', 'Kildare'),
-    ('Kilkenny', 'Kilkenny'),
-    ('Laois', 'Laois'),
-    ('Leitrim', 'Leitrim'),
-    ('Limerick', 'Limerick'),
-    ('Longford', 'Longford'),
-    ('Louth', 'Louth'),
-    ('Mayo', 'Mayo'),
-    ('Meath', 'Meath'),
-    ('Monaghan', 'Monaghan'),
-    ('Offaly', 'Offaly'),
-    ('Roscommon', 'Roscommon'),
-    ('Sligo', 'Sligo'),
-    ('Tipperary', 'Tipperary'),
-    ('Tyrone', 'Tyrone'),
-    ('Waterford', 'Waterford'),
-    ('Westmeath', 'Westmeath'),
-    ('Wexford', 'Wexford'),
-    ('Wicklow', 'Wicklow'),
-)
-
 
 class Profile(models.Model):
     """ User Profile Model """
@@ -51,10 +16,7 @@ class Profile(models.Model):
         default='../default_profile_dzbvvo',
         blank=True
     )
-    county_team = models.CharField(
-        max_length=25,
-        choices=COUNTY_CHOICES,
-        blank=True)
+    county_team = models.CharField(max_length=25, blank=True)
     club_team = models.CharField(max_length=25, blank=True)
 
     class Meta:
