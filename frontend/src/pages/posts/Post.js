@@ -144,8 +144,8 @@ const Post = (props) => {
                             <Card.Img className={styles.Image} src={image} alt={tag} />
                         </Link> : <></>
                         }
-                        <div className="d-flex align-items-center justify-content-between mt-5" >
-                            <div>
+                        <div className="d-flex align-items-center mt-4" >
+                            <div className="me-4">
                                 {is_owner ? (
                                     <OverlayTrigger
                                         placement="top"
@@ -169,13 +169,14 @@ const Post = (props) => {
                                         <i className={`far fa-heart ${styles.Icon}`} />
                                     </OverlayTrigger>
                                 )}
-                                {likes_count}
+                                <span className="ms-1">{likes_count}</span>
                             </div>
-                            <div>
+                            <div className="me-4"> 
                                 <Link to={`/posts/${id}`}>
                                     <i className={`far fa-comments ${styles.Icon}`} />
                                 </Link>
-                                {comments_count}
+                                <span className="ms-1">{comments_count}</span>
+                                
                             </div>
 
                             <div>
