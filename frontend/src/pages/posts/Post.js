@@ -1,7 +1,7 @@
 import React from "react";
-
+import styles from "../../styles/Post.module.css"
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Media, OverlayTrigger, Tooltip, Row, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { DropDownMenu } from "../../components/DropDownMenu";
@@ -107,88 +107,109 @@ const Post = (props) => {
     };
 
     return (
-        <Card >
-            <Card.Body>
-                <Media className="align-items-center justify-content-between">
+        <Card className="mb-3 p-3 shadow-sm">
+            <Row>
+                <Col md={1}>
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profile_image} height={55} />
-                        {owner}
                     </Link>
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
+                </Col>
+
+                <Col>
+                <Card.Body>
+                    <div className="d-flex align-items-center justify-content-between">
+                        <div>
+                            <Link className={styles.Username} to={`/profiles/${profile_id}`}>
+                            {owner}
+                            </Link>
+
+                            <span className={`text-secondary ${styles.UpdatedAt}`}>{updated_at}</span>
+                        </div>
+
                         {is_owner && postPage && (
                             <DropDownMenu
                                 handleEdit={handleEdit}
                                 handleDelete={handleDelete}
                             />
                         )}
+
                     </div>
-                </Media>
-            </Card.Body>
-            <Card.Body>
-                {content && <Card.Text>{content}</Card.Text>}
-                {tag && <Card.Text className="">#{tag.toLowerCase()}</Card.Text>}
+
+                    <Link to={`/posts/${id}`} className="text-dark text-decoration-none">
+                        {content && <Card.Text>{content}</Card.Text>}
+                        {tag && <Card.Text className="mb-3">#{tag.toLowerCase()}</Card.Text>}
+                    </Link>
 
                 {image ? <Link to={`/posts/${id}`}>
-                    <Card.Img src={image} alt={tag} />
+                    <Card.Img className={styles.Image} src={image} alt={tag} />
                 </Link> : <></>
                 }
-                <div >
-                    {is_owner ? (
+                <div className="d-flex align-items-center justify-content-between mt-5" >
+                    <div>
+                        {is_owner ? (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>You can't like your own post!</Tooltip>}
                         >
-                            <i className="far fa-heart" />
+                            <i className={`far fa-heart ${styles.Icon}`} />
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
-                            <i className={`fas fa-heart`} />
+                            <i className={`fas fa-heart ${styles.Icon}`} />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleLike}>
-                            <i className={`far fa-heart`} />
+                            <i className={`far fa-heart ${styles.Icon}`} />
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to like posts!</Tooltip>}
                         >
-                            <i className="far fa-heart" />
+                            <i className={`far fa-heart ${styles.Icon}`} />
                         </OverlayTrigger>
                     )}
                     {likes_count}
-                    <Link to={`/posts/${id}`}>
-                        <i className="far fa-comments" />
-                    </Link>
-                    {comments_count}
+                    </div>
+                    <div>
+                        <Link to={`/posts/${id}`}>
+                            <i className={`far fa-comments ${styles.Icon}`} />
+                        </Link>
+                        {comments_count}
+                    </div>
 
-                    {is_owner ? (
+                    <div>
+                        {is_owner ? (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>You can't save your own post</Tooltip>}
                         >
-                            <i class="fa-regular fa-bookmark"></i>
+                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
                         </OverlayTrigger>
                     ) : save_id ? (
                         <span onClick={handleUnSave}>
-                            <i class="fa-solid fa-bookmark"></i>
+                            <i className={`fa-solid fa-bookmark ${styles.Icon}`}></i>
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleSave}>
-                            <i class="fa-regular fa-bookmark"></i>
+                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to save posts!</Tooltip>}
                         >
-                            <i class="fa-regular fa-bookmark"></i>
+                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
                         </OverlayTrigger>
                     )}
+                    </div>
                 </div>
-            </Card.Body>
+
+                    </Card.Body>
+                </Col>
+            </Row>
         </Card>
+        
     );
 };
 
