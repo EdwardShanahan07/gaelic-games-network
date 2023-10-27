@@ -83,7 +83,7 @@ const NavBar = () => {
         </>;
 
     return (
-        <Navbar expand="lg" className="shadow-sm rounded"
+        <Navbar expand="lg" className="shadow-sm rounded mb-3"
             expanded={expanded}>
             <Container>
                 {currentUser ? loggedInLogo : loggedOutLogo}
