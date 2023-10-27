@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Post.module.css"
+import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip, Row, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -116,100 +116,99 @@ const Post = (props) => {
                 </Col>
 
                 <Col>
-                <Card.Body>
-                    <div className="d-flex align-items-center justify-content-between">
-                        <div>
-                            <Link className={styles.Username} to={`/profiles/${profile_id}`}>
-                            {owner}
-                            </Link>
+                    <Card.Body>
+                        <div className="d-flex align-items-center justify-content-between">
+                            <div>
+                                <Link className={styles.Username} to={`/profiles/${profile_id}`}>
+                                    {owner}
+                                </Link>
 
-                            <span className={`text-secondary ${styles.UpdatedAt}`}>{updated_at}</span>
+                                <span className={`text-secondary ${styles.UpdatedAt}`}>{updated_at}</span>
+                            </div>
+
+                            {is_owner && postPage && (
+                                <DropDownMenu
+                                    handleEdit={handleEdit}
+                                    handleDelete={handleDelete}
+                                />
+                            )}
+
                         </div>
 
-                        {is_owner && postPage && (
-                            <DropDownMenu
-                                handleEdit={handleEdit}
-                                handleDelete={handleDelete}
-                            />
-                        )}
-
-                    </div>
-
-                    <Link to={`/posts/${id}`} className="text-dark text-decoration-none">
-                        {content && <Card.Text>{content}</Card.Text>}
-                        {tag && <Card.Text className="mb-3">#{tag.toLowerCase()}</Card.Text>}
-                    </Link>
-
-                {image ? <Link to={`/posts/${id}`}>
-                    <Card.Img className={styles.Image} src={image} alt={tag} />
-                </Link> : <></>
-                }
-                <div className="d-flex align-items-center justify-content-between mt-5" >
-                    <div>
-                        {is_owner ? (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                        >
-                            <i className={`far fa-heart ${styles.Icon}`} />
-                        </OverlayTrigger>
-                    ) : like_id ? (
-                        <span onClick={handleUnlike}>
-                            <i className={`fas fa-heart ${styles.Icon}`} />
-                        </span>
-                    ) : currentUser ? (
-                        <span onClick={handleLike}>
-                            <i className={`far fa-heart ${styles.Icon}`} />
-                        </span>
-                    ) : (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in to like posts!</Tooltip>}
-                        >
-                            <i className={`far fa-heart ${styles.Icon}`} />
-                        </OverlayTrigger>
-                    )}
-                    {likes_count}
-                    </div>
-                    <div>
-                        <Link to={`/posts/${id}`}>
-                            <i className={`far fa-comments ${styles.Icon}`} />
+                        <Link to={`/posts/${id}`} className="text-dark text-decoration-none">
+                            {content && <Card.Text>{content}</Card.Text>}
+                            {tag && <Card.Text className="mb-3">#{tag.toLowerCase()}</Card.Text>}
                         </Link>
-                        {comments_count}
-                    </div>
 
-                    <div>
-                        {is_owner ? (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You can't save your own post</Tooltip>}
-                        >
-                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
-                        </OverlayTrigger>
-                    ) : save_id ? (
-                        <span onClick={handleUnSave}>
-                            <i className={`fa-solid fa-bookmark ${styles.Icon}`}></i>
-                        </span>
-                    ) : currentUser ? (
-                        <span onClick={handleSave}>
-                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
-                        </span>
-                    ) : (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in to save posts!</Tooltip>}
-                        >
-                            <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
-                        </OverlayTrigger>
-                    )}
-                    </div>
-                </div>
+                        {image ? <Link to={`/posts/${id}`}>
+                            <Card.Img className={styles.Image} src={image} alt={tag} />
+                        </Link> : <></>
+                        }
+                        <div className="d-flex align-items-center justify-content-between mt-5" >
+                            <div>
+                                {is_owner ? (
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                    >
+                                        <i className={`far fa-heart ${styles.Icon}`} />
+                                    </OverlayTrigger>
+                                ) : like_id ? (
+                                    <span onClick={handleUnlike}>
+                                        <i className={`fas fa-heart ${styles.Icon}`} />
+                                    </span>
+                                ) : currentUser ? (
+                                    <span onClick={handleLike}>
+                                        <i className={`far fa-heart ${styles.Icon}`} />
+                                    </span>
+                                ) : (
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip>Log in to like posts!</Tooltip>}
+                                    >
+                                        <i className={`far fa-heart ${styles.Icon}`} />
+                                    </OverlayTrigger>
+                                )}
+                                {likes_count}
+                            </div>
+                            <div>
+                                <Link to={`/posts/${id}`}>
+                                    <i className={`far fa-comments ${styles.Icon}`} />
+                                </Link>
+                                {comments_count}
+                            </div>
 
+                            <div>
+                                {is_owner ? (
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip>You can't save your own post</Tooltip>}
+                                    >
+                                        <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
+                                    </OverlayTrigger>
+                                ) : save_id ? (
+                                    <span onClick={handleUnSave}>
+                                        <i className={`fa-solid fa-bookmark ${styles.Icon}`}></i>
+                                    </span>
+                                ) : currentUser ? (
+                                    <span onClick={handleSave}>
+                                        <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
+                                    </span>
+                                ) : (
+                                    <OverlayTrigger
+                                        placement="top"
+                                        overlay={<Tooltip>Log in to save posts!</Tooltip>}
+                                    >
+                                        <i className={`fa-regular fa-bookmark ${styles.Icon}`}></i>
+                                    </OverlayTrigger>
+                                )}
+                            </div>
+                        </div>
                     </Card.Body>
                 </Col>
             </Row>
         </Card>
-        
+
     );
 };
 

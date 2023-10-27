@@ -6,6 +6,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import styles from "../../styles/CommentCreateForm.module.css";
 
 function CommentCreateForm(props) {
     const { post, setPost, setComments, profileImage, profile_id } = props;
@@ -41,8 +42,8 @@ function CommentCreateForm(props) {
     };
 
     return (
-        <Form className="mt-2" onSubmit={handleSubmit}>
-            <Form.Group>
+        <Form className="mt-3" onSubmit={handleSubmit}>
+            <Form.Group className='mb-2'>
                 <InputGroup>
                     <Link to={`/profiles/${profile_id}`}>
                         <Avatar src={profileImage} />
@@ -52,14 +53,14 @@ function CommentCreateForm(props) {
                         as="textarea"
                         value={content}
                         onChange={handleChange}
-                        rows={2}
+                        className={styles.Form}
                     />
                 </InputGroup>
             </Form.Group>
             <button
+                className={`btn btn-primary d-block ms-auto`}
                 disabled={!content.trim()}
-                type="submit"
-            >
+                type="submit">
                 post
             </button>
         </Form>

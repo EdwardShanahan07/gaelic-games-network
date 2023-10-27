@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
+import styles from "../../styles/CommentCreateForm.module.css";
 
 
 function CommentEditForm(props) {
@@ -39,25 +40,25 @@ function CommentEditForm(props) {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="pr-1">
+            <Form.Group className="pr-1 mb-2">
                 <Form.Control
-                 
+                    className={styles.Form}
                     as="textarea"
                     value={formContent}
                     onChange={handleChange}
                     rows={2}
                 />
             </Form.Group>
-            <div className="text-right">
+            <div className="d-flex justify-content-end">
                 <button
-           
+                    className={`btn btn-secondary me-2`}
                     onClick={() => setShowEditForm(false)}
                     type="button"
                 >
                     cancel
                 </button>
                 <button
-                
+                    className={`btn btn-primary`}
                     disabled={!content.trim()}
                     type="submit"
                 >

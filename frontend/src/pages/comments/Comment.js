@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
+import { Media, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { DropDownMenu } from "../../components/DropDownMenu";
@@ -7,6 +7,8 @@ import CommentEditForm from "./CommentEditForm";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+
+import styles from "../../styles/Comment.module.css";
 
 const Comment = (props) => {
     const {
@@ -47,31 +49,44 @@ const Comment = (props) => {
         <>
             <hr />
             <Media>
-                <Link to={`/profiles/${profile_id}`}>
-                    <Avatar src={profile_image} />
-                </Link>
-                <Media.Body className="align-self-center ml-2">
-                    <span>{owner}</span>
-                    <span >{updated_at}</span>
-                    {showEditForm ? (
-                        <CommentEditForm
-                            id={id}
-                            profile_id={profile_id}
-                            content={content}
-                            profileImage={profile_image}
-                            setComments={setComments}
-                            setShowEditForm={setShowEditForm}
-                        />
-                    ) : (
-                        <p>{content}</p>
-                    )}
-                </Media.Body>
-                {is_owner && !showEditForm && (
-                    <DropDownMenu
-                        handleEdit={() => setShowEditForm(true)}
-                        handleDelete={handleDelete}
-                    />
-                )}
+                <Row>
+                    <Col md={1}>
+                        <Link to={`/profiles/${profile_id}`}>
+                            <Avatar src={profile_image} />
+                        </Link>
+                    </Col>
+
+                    <Col>
+                        <Media.Body className="align-self-center ml-2">
+                            <div className={"d-flex align-items-center justify-content-between"}>
+                                <div>
+                                    <span className={styles.Owner}>{owner}</span>
+                                    <span className="text-secondary">{updated_at}</span>
+                                </div>
+
+                                {is_owner && !showEditForm && (
+                                    <DropDownMenu
+                                        handleEdit={() => setShowEditForm(true)}
+                                        handleDelete={handleDelete}
+                                    />
+                                )}
+                            </div>
+
+                            {showEditForm ? (
+                                <CommentEditForm
+                                    id={id}
+                                    profile_id={profile_id}
+                                    content={content}
+                                    profileImage={profile_image}
+                                    setComments={setComments}
+                                    setShowEditForm={setShowEditForm}
+                                />
+                            ) : (
+                                <p>{content}</p>
+                            )}
+                        </Media.Body>
+                    </Col>
+                </Row>
             </Media>
         </>
     );
