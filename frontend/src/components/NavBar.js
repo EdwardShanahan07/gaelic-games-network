@@ -49,33 +49,35 @@ const NavBar = () => {
 
     const loggedInLinks =
         <>
-            <Link to="/posts/create" className="nav-link">
+            <Link to="/posts/create" className={`nav-link ${styles.Link}`}>
                 <i class={`fa-solid fa-circle-plus ${styles.Icon}`}></i>
             </Link>
-            <Link to="/discover" className="nav-link">
+            <Link to="/discover" className={`nav-link ${styles.Link}`}>
                 Discover
             </Link>
-            <Link to="/feed" className="nav-link">
+            <Link to="/feed" className={`nav-link ${styles.Link}`}>
                 Feed
             </Link>
-            <Link to="/saved" className="nav-link">
+            <Link to="/saved" className={`nav-link ${styles.Link}`}>
                 Saved
             </Link>
-            <Link to="/" className="nav-link" onClick={handleSignOut}>
+            <Link to="/" className={`nav-link ${styles.Link}`} onClick={handleSignOut}>
                 Sign Out
             </Link>
-            <Avatar src={currentUser?.profile_image} height={40} />
+            <Link to={`/profiles/${currentUser?.profile_id}`} className={`na-link ${styles.Link}`}>
+                <Avatar src={currentUser?.profile_image} height={40} />
+            </Link>
         </>;
 
     const loggedOutLinks =
         <>
-            <Link to="/discover" className="nav-link">
+            <Link to="/discover" className={`nav-link ${styles.Link}`}>
                 Discover
             </Link>
-            <Link to="/signup" className="nav-link">
+            <Link to="/signup" className={`nav-link ${styles.Link}`}>
                 Sign Up
             </Link>
-            <Link to="/signin" className="nav-link">
+            <Link to="/signin" className={`nav-link ${styles.Link}`}>
                 Sign In
             </Link>
         </>;
