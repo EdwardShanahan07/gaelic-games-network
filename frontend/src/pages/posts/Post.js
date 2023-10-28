@@ -171,12 +171,12 @@ const Post = (props) => {
                                 )}
                                 <span className="ms-1">{likes_count}</span>
                             </div>
-                            <div className="me-4"> 
+                            <div className="me-4">
                                 <Link to={`/posts/${id}`}>
                                     <i className={`far fa-comments ${styles.Icon}`} />
                                 </Link>
                                 <span className="ms-1">{comments_count}</span>
-                                
+
                             </div>
 
                             <div>

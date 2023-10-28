@@ -62,23 +62,27 @@ function ProfilePage() {
     const mainProfile = (
         <>
             {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
-            <Row noGutters className="px-3 text-center">
-                <Col lg={3} className="text-lg-left">
+            <Row noGutters className="px-3">
+                <Col lg={3} className="">
                     <Image
                         className={styles.ProfileImage}
                         roundedCircle
                         src={profile?.image}
                     />
-
-                    <p>{profile?.description}</p>
-
-                    <p>Club Team: {profile?.club_team}</p>
-
-                    <p>County Team: {profile?.county_team}</p>
                 </Col>
                 <Col lg={6}>
-                    <h3 className="m-2">{profile?.owner}</h3>
-                    <Row className="justify-content-center no-gutters">
+
+                    <div>
+                        <h3>{profile?.owner}</h3>
+
+                        {profile?.description ? <p className="text-secondary">{profile?.description}</p> : <></>}
+
+                        {profile?.club_team ? <p>Club Team: {profile?.club_team}</p> : <></>}
+
+                        {profile?.county_team ? <p>County Team: {profile?.county_team}</p> : <></>}
+                    </div>
+
+                    <Row className="no-gutters">
                         <Col xs={3} className="my-2">
                             <div>{profile?.posts_count}</div>
                             <div>posts</div>
@@ -143,7 +147,7 @@ function ProfilePage() {
 
     return (
         <Row>
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
+            <Col className={`${styles.Profile} py-2 p-0 p-lg-2`} lg={8}>
                 <PopularProfiles mobile />
                 <Container className={appStyles.Content}>
                     {hasLoaded ? (
