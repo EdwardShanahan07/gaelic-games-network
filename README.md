@@ -12,6 +12,7 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
     - [Sprint 3](#sprint-3)
     - [Sprint 4](#sprint-4)
     - [Sprint 5](#sprint-5)
+  - [Agile Methodology](#agile-methodology)
   - [Design](#design)
     - [Typography](#typography)
   - [Languages and Frameworks](#languages-and-frameworks)
@@ -59,16 +60,27 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 ### Sprint 5
 1. As a **User**, I can **view other users** so that **I can see their posts and learn more about them**
 2. As a **User**, I can **see a list of the most followed user profiles** so that **I can see which profiles are popular**
-3. As a **Logged In User**, I can **see a list of all the users** so that **I can see who I can follow**
-4. As a **User**, I can **see stats on a specific user profile page** so that **I can learn more about the user**
-5. As a **Logged In User**, I can **follow and unfollow other users** so that **I can see or remove posts by specific users**
-6. As a **Logged In User**, I can **edit my profile** so that **I can keep my profile update**
-7. As a **User**, I can **update my username and password** so that **I can change my displayed name and keep my account secure**
+3. As a **User**, I can **see stats on a specific user profile page** so that **I can learn more about the user**
+4. As a **Logged In User**, I can **follow and unfollow other users** so that **I can see or remove posts by specific users**
+5. As a **Logged In User**, I can **edit my profile** so that **I can keep my profile update**
+6. As a **User**, I can **update my username and password** so that **I can change my displayed name and keep my account secure**
+7. As a **Logged In User**, I can **save a post** so that I can view it later
+
+## Agile Methodology 
+To create the Gaelic Games Network, I embraced the Agile methodology, ensuring a flexible and iterative development process. I initiated the project with a well-defined mascot method, establishing the project’s identity and vision. I then categorized features into “Must-Have” for core functionality, “Should-Have” for important but not critical elements, “Could-Have” for desirable additions, and “Won’t-Have” for items outside the project’s scope.
+
+In addition to this, I incorporated the “Sprints” approach within Agile. By dividing the project timeline into sprints, typically lasting one to two weeks, I focused on delivering specific sets of features and functionalities. This allowed for incremental progress and regular feedback, enhancing the project’s adaptability.
+
+GitHub Projects’ Kanban board was instrumental in tracking and managing tasks during each sprint. It provided a visual representation of the project’s status, enabling me to move tasks through various stages, prioritize them based on their importance, and react to changing requirements.
+
+This combined approach ensured that the Gaelic Games Network was developed efficiently and effectively, accommodating adjustments and improvements along the way, ultimately leading to a successful outcome.
+
+Link to [Gaelic Games Network GitHub Project Board](https://github.com/users/EdwardShanahan07/projects/11)
 
 ## Design
 
 ### Typography
-Gaelic Games Network's primary font is [Montserrat](https://fonts.google.com/specimen/Montserrat). Montserrat is modern and clean font and works well with this site.
+Games Network features the [Montserrat](https://fonts.google.com/specimen/Montserrat) font as its primary typeface. Montserrat is a contemporary and elegant font that complements the website beautifully.
 ![](./readme-assets/typography.png)
 
 ## Languages and Frameworks
