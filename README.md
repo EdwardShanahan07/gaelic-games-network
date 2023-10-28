@@ -12,6 +12,8 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
     - [Sprint 3](#sprint-3)
     - [Sprint 4](#sprint-4)
     - [Sprint 5](#sprint-5)
+  - [Design](#design)
+    - [Typography](#typography)
   - [Languages and Frameworks](#languages-and-frameworks)
     - [Languages](#languages)
     - [Frameworks](#frameworks)
@@ -62,6 +64,12 @@ Design and develop a social media application, Gaelic Games Network (GGN), that 
 5. As a **Logged In User**, I can **follow and unfollow other users** so that **I can see or remove posts by specific users**
 6. As a **Logged In User**, I can **edit my profile** so that **I can keep my profile update**
 7. As a **User**, I can **update my username and password** so that **I can change my displayed name and keep my account secure**
+
+## Design
+
+### Typography
+Gaelic Games Network's primary font is [Montserrat](https://fonts.google.com/specimen/Montserrat). Montserrat is modern and clean font and works well with this site.
+![](./readme-assets/typography.png)
 
 ## Languages and Frameworks
 
