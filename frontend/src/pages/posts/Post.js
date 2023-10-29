@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip, Row, Col } from "react-bootstrap";
+import { Card, OverlayTrigger, Tooltip, Row, Col } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { DropDownMenu } from "../../components/DropDownMenu";
@@ -116,10 +116,10 @@ const Post = (props) => {
                 </Col>
 
                 <Col>
-                    <Card.Body>
-                        <div className="d-flex align-items-center justify-content-between">
+                    <Card.Body className="m-0 pt-0">
+                        <div className={`d-flex align-items-center justify-content-between`}>
                             <div>
-                                <Link className={styles.Username} to={`/profiles/${profile_id}`}>
+                                <Link className={`${styles.Username} `} to={`/profiles/${profile_id}`}>
                                     {owner}
                                 </Link>
 

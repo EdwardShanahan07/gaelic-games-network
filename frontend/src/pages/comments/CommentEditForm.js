@@ -40,7 +40,7 @@ function CommentEditForm(props) {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="pr-1 mb-2">
+            <Form.Group className='mb-2'>
                 <Form.Control
                     className={styles.Form}
                     as="textarea"

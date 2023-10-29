@@ -108,7 +108,7 @@ const PostCreateForm = () => {
             ))}
 
             <Button
-                className={`btn-secondary`}
+                className={`btn-secondary me-3`}
                 onClick={() => history.goBack()}
             >
                 cancel
