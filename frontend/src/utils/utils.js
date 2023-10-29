@@ -1,5 +1,5 @@
-import { axiosReq } from "../api/axiosDefaults";
 import jwtDecode from "jwt-decode";
+import { axiosReq } from "../api/axiosDefaults";
 
 export const fetchMoreData = async (resource, setResource) => {
     try {
@@ -13,7 +13,7 @@ export const fetchMoreData = async (resource, setResource) => {
                     : [...acc, cur];
             }, prevResource.results),
         }));
-    } catch (err) { console.logg(err); }
+    } catch (err) { }
 };
 
 export const followHelper = (profile, clickedProfile, following_id) => {
