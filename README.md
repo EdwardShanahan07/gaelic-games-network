@@ -115,3 +115,4 @@ Games Network features the [Montserrat](https://fonts.google.com/specimen/Montse
 - msw
 - jwt-decode
 - eslint
+- whitenoise==6.4.0
