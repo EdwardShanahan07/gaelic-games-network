@@ -15,6 +15,7 @@ import styles from "../../styles/SignUp.module.css";
 
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignIn = () => {
     const setCurrentUser = useSetCurrentUser();
@@ -34,7 +35,7 @@ const SignIn = () => {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
             history.push("/discover");
             setCurrentUser(data.user);
-            // history.goBack();
+            setTokenTimestamp(data);
         } catch (err) {
             setErrors(err.response?.data);
         }
@@ -97,7 +98,7 @@ const SignIn = () => {
                         ))}
 
                         <Link className={`d-block mt-3 text-decoration-none text-secondary`} to="/signup">
-                            Don't have an account? <span className="text-primary">Sign up now!</span>
+                            Don&apos;t have an account? <span className="text-primary">Sign up now!</span>
                         </Link>
                     </Form>
                 </Container>

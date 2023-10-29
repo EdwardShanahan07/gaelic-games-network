@@ -112,3 +112,6 @@ Games Network features the [Montserrat](https://fonts.google.com/specimen/Montse
 - react==17.0.2
 - react-bootstrap
 - react-infinite-scroll-component
+- msw
+- jwt-decode
+- eslint

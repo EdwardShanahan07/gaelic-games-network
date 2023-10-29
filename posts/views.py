@@ -43,7 +43,7 @@ class PostList(generics.ListCreateAPIView):
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Get a post. If the user owns post they 
+    Get a post. If the user owns post they
     can edit or delete the post
     """
     serializer_class = PostSerializer

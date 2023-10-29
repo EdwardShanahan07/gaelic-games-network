@@ -13,6 +13,7 @@ import {
     useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -24,6 +25,7 @@ const NavBar = () => {
         try {
             await axios.post("dj-rest-auth/logout/");
             setCurrentUser(null);
+            removeTokenTimestamp();
         } catch (err) {
             console.log(err);
         }
@@ -50,7 +52,7 @@ const NavBar = () => {
     const loggedInLinks =
         <>
             <Link to="/posts/create" className={`nav-link ${styles.Link}`}>
-                <i class={`fa-solid fa-circle-plus ${styles.Icon}`}></i>
+                <i className={`fa-solid fa-circle-plus ${styles.Icon}`}></i>
             </Link>
             <Link to="/discover" className={`nav-link ${styles.Link}`}>
                 Discover

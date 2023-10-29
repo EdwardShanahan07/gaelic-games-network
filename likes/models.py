@@ -2,13 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from posts.models import Post
 
+
 class Like(models.Model):
     """
     Like model
     Owner is the user instance and post is the post instance.
     unique_together is to bind owner and post together
     """
-    
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(
         Post, related_name='likes', on_delete=models.CASCADE

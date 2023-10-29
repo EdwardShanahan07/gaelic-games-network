@@ -7,7 +7,7 @@ class Follower(models.Model):
         owner is the user that follows a user.
         followed is a user that is followed by owner
     """
-    
+
     owner = models.ForeignKey(
         User, related_name='following', on_delete=models.CASCADE
     )

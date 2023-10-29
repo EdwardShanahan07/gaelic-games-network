@@ -21,7 +21,7 @@ class CommentList(generics.ListCreateAPIView):
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    Get a comment if owner of the comment, 
+    Get a comment if owner of the comment,
     the owner can edit or delete the comment.
     """
     permission_classes = [IsOwnerOrReadOnly]
