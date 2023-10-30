@@ -8,13 +8,23 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
     - [Project Objective](#project-objective)
     - [User Stories](#user-stories)
       - [Sprint 1](#sprint-1)
-    - [Sprint 2](#sprint-2)
-    - [Sprint 3](#sprint-3)
-    - [Sprint 4](#sprint-4)
-    - [Sprint 5](#sprint-5)
+      - [Sprint 2](#sprint-2)
+      - [Sprint 3](#sprint-3)
+      - [Sprint 4](#sprint-4)
+      - [Sprint 5](#sprint-5)
   - [Agile Methodology](#agile-methodology)
   - [Design](#design)
     - [Typography](#typography)
+    - [Wireframes](#wireframes)
+    - [React Components](#react-components)
+      - [NavBar](#navbar)
+      - [NotFound](#notfound)
+      - [Home](#home)
+      - [DropDownMenu](#dropdownmenu)
+      - [ProfileEditDropdown](#profileeditdropdown)
+      - [Avatar](#avatar)
+      - [Asset](#asset)
+  - [Features](#features)
   - [Languages and Frameworks](#languages-and-frameworks)
     - [Languages](#languages)
     - [Frameworks](#frameworks)
@@ -82,6 +92,294 @@ Link to [Gaelic Games Network GitHub Project Board](https://github.com/users/Edw
 ### Typography
 Games Network features the [Montserrat](https://fonts.google.com/specimen/Montserrat) font as its primary typeface. Montserrat is a contemporary and elegant font that complements the website beautifully.
 ![](./readme-assets/typography.png)
+
+### Wireframes
+Wireframes were created using [Figma](https://www.figma.com/).
+<details>
+  <summary>Home Page</summary>
+  
+  ![](./readme-assets/wireframe-home.png)
+</details>
+
+<details>
+  <summary>Sign In Page</summary>
+  
+  ![](./readme-assets/wireframe-signin.png)
+</details>
+
+<details>
+  <summary>Sign Up Page</summary>
+  
+  ![](./readme-assets/wireframe-signup.png)
+</details>
+
+<details>
+  <summary>Discover Page</summary>
+  
+  ![](./readme-assets/wireframe-discover.png)
+</details>
+
+<details>
+  <summary>Feed Page</summary>
+  
+  ![](./readme-assets/wireframe-feed.png)
+</details>
+
+<details>
+  <summary>Post Page</summary>
+  
+  ![](./readme-assets/wireframe-post-page.png)
+</details>
+
+### React Components
+
+#### NavBar
+
+##### Description:
+The NavBar component is responsible for rendering a navigation bar at the top of the web application. It adapts its content and behaviour based on the user’s authentication status. When a user is logged in, it displays links for various user-related actions and features, such as creating posts, discovering content, and signing out. When a user is logged out, it provides links for signing up and signing in.
+
+##### Props:
+None
+
+##### Usage:
+To use this component in your application, you can import it and place it within your application’s layout or wherever navigation is needed. Depending on the user’s authentication status, the NavBar component will dynamically display relevant links and actions.
+
+```
+<NavBar />
+```
+
+#### NotFound
+
+##### Description:
+The NotFound component is responsible for rendering a user-friendly “404 Not Found” error page in the web application. When a user navigates to a non-existent page or resource, this component is displayed to inform the user that the requested page cannot be found. It includes an image, a message, and a button to navigate back to the home page.
+
+##### Props
+None
+
+##### Usage:
+To use this component in your application, you can import it and display it whenever a 404 error is encountered. It provides a user-friendly way to handle cases when a page is not found.
+
+```
+<NotFound />
+```
+
+#### Home
+
+##### Description:
+The Home component represents the landing page of the web application. It provides an introduction to the application’s purpose, encouraging users to sign up. The page features a title, a brief description, and an image, all designed to create an inviting atmosphere for potential users.
+
+##### Props
+None
+
+##### Usage:
+This component is typically used as the initial landing page for the application. It’s where users first arrive when they access the application’s URL.
+
+```
+<Home />
+```
+
+#### DropDownMenu
+
+##### Description:
+The DropDownMenu component represents a generic dropdown menu typically used to provide options or actions for an item or element. It is designed to be a reusable dropdown menu component. When activated, it displays a toggle button with three dots (”…”) that, when clicked, opens a dropdown containing items like “Edit” and “Delete.”
+
+##### Props
+- handleEdit: A function to be executed when the “Edit” option is clicked.
+- handleDelete: A function to be executed when the “Delete” option is clicked.
+
+##### Usage:
+This component can be used in various parts of the application to provide dropdown menus for items that need editing or deleting.
+
+```
+<DropDownMenu />
+```
+
+#### ProfileEditDropdown
+
+##### Description:
+The ProfileEditDropdown component is specifically designed for a profile editing menu. It provides options for editing a user’s profile, changing their username, and changing their password. The dropdown contains options with icons and labels, making it easy for users to navigate to different parts of their profile for editing.
+
+##### Props
+id: The ID of the user’s profile.
+
+##### Usage:
+This component can be used in the user profile section to provide a menu for editing various aspects of the user’s profile.
+
+```
+<ProfileEditDropdown />
+```
+
+#### Avatar
+
+##### Description:
+The Avatar component is responsible for displaying user avatars or profile pictures within the web application. It can display both an image (specified by the src prop) and optional text or additional content. The component allows customization of the avatar’s height and width.
+
+##### Props
+- src (string): The source URL of the image to be displayed as the avatar.
+- height (number, optional): The height of the avatar image. Default is 45 pixels.
+- text (string, optional): Additional text or content to be displayed alongside the avatar image.
+
+##### Usage:
+This component can be used to display user avatars or profile pictures throughout the application, customizing the avatar’s appearance and optionally adding associated text or content.
+
+```
+<Avatar />
+```
+
+#### Asset
+
+##### Description:
+The Asset component is a versatile component for rendering assets in a web application. It can display different types of content based on the props provided, including a loading spinner, an image, and an optional message. This flexibility makes it suitable for showing content while loading, images, or messages within different parts of the application.
+
+##### Props
+- spinner (boolean): Indicates whether to display a loading spinner (true) or not (false).
+- src (string): The source URL of an image to display.
+- message (string, optional): An optional message or text content to be displayed below the spinner or image
+
+##### Usage:
+This component can be used in various parts of the application to display different types of assets, whether it’s a loading spinner during data retrieval, images, or accompanying messages
+
+```
+<Asset />
+```
+
+## Features
+
+### NavBar
+- Depending on the user's sign-in status, the navigation links will vary.
+- When the user is signed in, additional features and functionality will be accessible.
+
+<details>
+  <summary>Navbar Unregister</summary>
+  
+  ![](./readme-assets/feature-navbar-unregister.png)
+</details>
+
+<details>
+  <summary>Navbar register</summary>
+  
+  ![](./readme-assets/feature-navbar-register.png)
+</details>
+
+### Home Page
+- The homepage features an image introductory text designed to provide users with information about the site
+
+<details>
+  <summary>Home Page</summary>
+  
+  ![](./readme-assets/feature-home.png)
+</details>
+
+### Discover Page
+- The Discover page includes a search bar that enables users to search for posts or usernames.
+- It also features a popular user section, allowing users to view the most followed users.
+- Furthermore, all users' posts are displayed on the Discover page.
+
+<details>
+  <summary>Discover Page</summary>
+  
+  ![](./readme-assets/feature-discover.png)
+</details>
+
+### Sign Up Page
+- On the sign-up page, users will find a registration form requiring the input of a username and password.
+- This form is equipped with validation mechanisms to assess the credibility of the provided information.
+
+<details>
+  <summary>Sign Up</summary>
+  
+  ![](./readme-assets/feature-signup.png)
+</details>
+
+### Sign In Page
+- On the sign-in page, users will encounter a login form where they are prompted to enter a username and password.
+- This form is equipped with validation mechanisms to verify the credibility of the provided information.
+
+<details>
+  <summary>Sign In</summary>
+  
+  ![](./readme-assets/feature-sign-in.png)
+</details>
+
+### Feed Page
+- The feed page contains all posts from users that the user follows
+
+<details>
+  <summary>Feed</summary>
+  
+  ![](./readme-assets/feature-feed.png)
+</details>
+
+### Create Post
+- The Create Post page includes a form where users can upload an image, share their thoughts, and add tags to their post.
+
+<details>
+  <summary>Create Post</summary>
+  
+  ![](./readme-assets/feature-create-post.png)
+</details>
+
+### Edit Post Page
+- Users have the ability to edit their posts to make modifications or updates.
+- Users also have the ability to delete a post
+
+<details>
+  <summary>Edit Post</summary>
+  
+  ![](./readme-assets/feature-edit-post.png)
+</details>
+
+### Saved Posts Page
+- Users can access a list of saved posts for viewing.
+
+<details>
+  <summary>Saved Posts</summary>
+  
+  ![](./readme-assets/feature-saved.png)
+</details>
+
+### Post Page
+- Users can view individual posts and, if available, a list of comments on the page.
+- If logged in, users can create comments.
+- Additionally, users can edit their own comments if they have posted them.
+
+<details>
+  <summary>Post</summary>
+  
+  ![](./readme-assets/feature-post-page.png)
+</details>
+
+### Profile Page
+- Users have a dedicated profile page where they can access their personal information.
+- On this page, users can view their post count, as well as the number of users they follow and their followers.
+- Users can also specify their supported country and club team.
+
+<details>
+  <summary>Profile</summary>
+  
+  ![](./readme-assets/feature-profile.png)
+</details>
+
+### Edit Profile
+- Users have the option to edit their profile, allowing them to change their username, password, and personal details.
+
+<details>
+  <summary>Edit Profile</summary>
+  
+  ![](./readme-assets/feature-edit-profile.png)
+</details>
+
+<details>
+  <summary>Change Username</summary>
+  
+  ![](./readme-assets/feature-username.png)
+</details>
+
+<details>
+  <summary>Change Password</summary>
+  
+  ![](./readme-assets/feature-password.png)
+</details>
 
 ## Languages and Frameworks
 
