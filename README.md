@@ -17,6 +17,7 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
     - [Typography](#typography)
     - [Wireframes](#wireframes)
     - [React Components](#react-components)
+    - [Database Design](#database-design)
       - [NavBar](#navbar)
       - [NotFound](#notfound)
       - [Home](#home)
@@ -100,6 +101,9 @@ Link to [Gaelic Games Network GitHub Project Board](https://github.com/users/Edw
 ### Typography
 Games Network features the [Montserrat](https://fonts.google.com/specimen/Montserrat) font as its primary typeface. Montserrat is a contemporary and elegant font that complements the website beautifully.
 ![](./readme-assets/typography.png)
+
+### Colour
+![](./readme-assets/coolors.png)
 
 ### Wireframes
 Wireframes were created using [Figma](https://www.figma.com/).
@@ -250,6 +254,9 @@ This component can be used in various parts of the application to display differ
 ```
 <Asset />
 ```
+
+### Databse Design
+![](./readme-assets/erd.png)
 
 ## Features
 
