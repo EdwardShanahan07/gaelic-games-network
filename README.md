@@ -29,6 +29,14 @@ The Gaelic Games Network (GGN) is a dynamic and interactive social media platfor
     - [Languages](#languages)
     - [Frameworks](#frameworks)
     - [Libraries Used](#libraries-used)
+  - [Testing](#testing)
+    - [Validation](#validation)
+    - [Lighthouse](#lighthouse)
+    - [User Stories Testing](#user-stories-testing)
+    - [Bugs](#bugs)
+  - [Acknowledgments](#acknowledgments)
+    - [Code Used](#code-used)
+    - [Resouces](#resources)  
 
 ## User Experience
 
@@ -414,3 +422,596 @@ This component can be used in various parts of the application to display differ
 - jwt-decode
 - eslint
 - whitenoise==6.4.0
+
+## Testing
+
+### Validation
+
+#### Python
+Python code was validated using [Pep8ci](https://pep8ci.herokuapp.com/). No errors when validating code.
+
+##### drf_api
+
+<details>
+  <summary>settings.py</summary>
+  
+  ![](./readme-assets/drf-settings.png)
+</details>
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/drf-views.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/drf-serializer.png)
+</details>
+
+<details>
+  <summary>permissions.py</summary>
+  
+  ![](./readme-assets/drf-permissions.png)
+</details>
+
+<details>
+  <summary>urls.py</summary>
+  
+  ![](./readme-assets/drf-url.png)
+</details>
+
+##### profiles
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/profile-views.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/profile-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/profile-model.png)
+</details>
+
+##### posts
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/post-view.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/post-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/post-model.png)
+</details>
+
+##### comments
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/comment-view.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/comment-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/comment-model.png)
+</details>
+
+##### likes
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/like-view.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/like-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/like-model.png)
+</details>
+
+##### saves
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/save-view.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/save-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/save-model.png)
+</details>
+
+##### followers
+
+<details>
+  <summary>views.py</summary>
+  
+  ![](./readme-assets/follower-view.png)
+</details>
+
+<details>
+  <summary>serializer.py</summary>
+  
+  ![](./readme-assets/follower-serializer.png)
+</details>
+
+<details>
+  <summary>models.py</summary>
+  
+  ![](./readme-assets/follower-model.png)
+</details>
+
+#### HTML
+HTML was validated using [Wc3 Markup Validation](https://validator.w3.org/). No errors were found.
+
+<details>
+  <summary>Home</summary>
+  
+  ![](./readme-assets/home-html.png)
+</details>
+
+<details>
+  <summary>Sign Up</summary>
+  
+  ![](./readme-assets/signup-html.png)
+</details>
+
+<details>
+  <summary>Sign Up</summary>
+  
+  ![](./readme-assets/signin-html.png)
+</details>
+
+<details>
+  <summary>Discover</summary>
+  
+  ![](./readme-assets/discover-html.png)
+</details>
+
+<details>
+  <summary>Feed</summary>
+  
+  ![](./readme-assets/feed-html.png)
+</details>
+
+<details>
+  <summary>Post Create</summary>
+  
+  ![](./readme-assets/post-create-html.png)
+</details>
+
+<details>
+  <summary>Post Edit</summary>
+  
+  ![](./readme-assets/posts-edit.png)
+</details>
+
+<details>
+  <summary>Post Page</summary>
+  
+  ![](./readme-assets/post-edit-html.png)
+</details>
+
+<details>
+  <summary>Profile</summary>
+  
+  ![](./readme-assets/profile-html.png)
+</details>
+
+<details>
+  <summary>Profile Edit</summary>
+  
+  ![](./readme-assets/profile-edit-html.png)
+</details>
+
+<details>
+  <summary>Profile Edit Username</summary>
+  
+  ![](./readme-assets/profile-edit-username-html.png)
+</details>
+
+<details>
+  <summary>Profile Edit Password</summary>
+  
+  ![](./readme-assets/profile-password-html.png)
+</details>
+
+
+#### HTML
+CSS was validated using [jigsaw CSS Validation](https://jigsaw.w3.org/css-validator/). No errors were found.
+
+<details>
+  <summary>App.module.css</summary>
+  
+  ![](./readme-assets/app-css.png)
+</details>
+
+<details>
+  <summary>Asset.module.css</summary>
+  
+  ![](./readme-assets/asset-css.png)
+</details>
+
+<details>
+  <summary>Avatar.module.css</summary>
+  
+  ![](./readme-assets/avatar-css.png)
+</details>
+
+<details>
+  <summary>Button.module.css</summary>
+  
+  ![](./readme-assets/button-css.png)
+</details>
+
+<details>
+  <summary>Comment.module.css</summary>
+  
+  ![](./readme-assets/comment-css.png)
+</details>
+
+<details>
+  <summary>DropDown.module.css</summary>
+  
+  ![](./readme-assets/dropdown-css.png)
+</details>
+
+<details>
+  <summary>Home.module.css</summary>
+  
+  ![](./readme-assets/home-css.png)
+</details>
+
+<details>
+  <summary>NavBar.module.css</summary>
+  
+  ![](./readme-assets/navbar-css.png)
+</details>
+
+<details>
+  <summary>NotFound.module.css</summary>
+  
+  ![](./readme-assets/not-found-css.png)
+</details>
+
+<details>
+  <summary>Post.module.css</summary>
+  
+  ![](./readme-assets/post-css.png)
+</details>
+
+<details>
+  <summary>PostCreate.module.css</summary>
+  
+  ![](./readme-assets/post-create.png)
+</details>
+
+<details>
+  <summary>PostPage.module.css</summary>
+  
+  ![](./readme-assets/post-page-css.png)
+</details>
+
+<details>
+  <summary>SignUp.module.css</summary>
+  
+  ![](./readme-assets/signup-css.png)
+</details>
+
+#### JSX
+JSX was validated using [EsLint](https://eslint.org/). No errors were found.
+
+<details>
+  <summary>App.js</summary>
+  
+  ![](./readme-assets/app.png)
+</details>
+
+<details>
+  <summary>Components</summary>
+  
+  ![](./readme-assets/components.png)
+</details>
+
+<details>
+  <summary>api</summary>
+  
+  ![](./readme-assets/api.png)
+</details>
+
+<details>
+  <summary>contexts</summary>
+  
+  ![](./readme-assets/context.png)
+</details>
+
+<details>
+  <summary>hooks</summary>
+  
+  ![](./readme-assets/hooks.png)
+</details>
+
+<details>
+  <summary>auth</summary>
+  
+  ![](./readme-assets/auth.png)
+</details>
+
+<details>
+  <summary>comments</summary>
+  
+  ![](./readme-assets/comment.png)
+</details>
+
+<details>
+  <summary>posts</summary>
+  
+  ![](./readme-assets/posts.png)
+</details>
+
+<details>
+  <summary>profiles</summary>
+  
+  ![](./readme-assets/app.png)
+</details>
+
+<details>
+  <summary>utils</summary>
+  
+  ![](./readme-assets/utils.png)
+</details>
+
+### Lighthouse
+I used Google Chrome developer tools to test the performance and accessibility of the site. The results came back good.
+
+<details>
+  <summary>Lighthouse Desktop</summary>
+  
+  ![](./readme-assets/lighthouse-desktop.png)
+</details>
+
+<details>
+  <summary>Lighthouse mobile</summary>
+  
+  ![](./readme-assets/lighthouse-mobile.png)
+</details>
+
+### User Stories Testing
+
+#### As a **User**, I can **view a navbar on every page** so that **I can navigate between pages**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Navigate to every page  | Navbar should be present on every page  | Pass  |
+
+#### As a **User**, I can **navigate through pages quickly**  so that **I can view content without pages refreshing**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Navigate to every page  | Page should not refresh when navigating   | Pass  |
+
+#### As a **User**, I can **create an account**  so that **I can gain full features of the website**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Signup for an account  | When I sign up I should gain access to the website's full features   | Pass  |
+
+#### As a **User**, I can **sign in**  so that **I can regain site full features**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Sigin to my account  | When I sign in, I should be logged in to my account   | Pass  |
+
+#### As a **User**, I can **tell if I’m logged in** so that **gain full functionality of the website**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Display logged-in nav links  | When I sign in, I should see a different nav link   | Pass  |
+
+#### As a **User**, I can **see sign-in and sign-out pages**  so that **I can sign in/sign up**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click sign out button  | When I sign out I should be logged out of my account  | Pass  |
+
+#### As a **User**, I can **view avatars** so that **I can identify other other users**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| User's avatars display  | User's avatars should be visible   | Pass  |
+
+#### As a **User**, I can **have my logged-in status until I choose to log out** so that **my experience isn't compromised**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| No action  | Refresh token is activated until 24 hours without activity | Pass  |
+
+#### As a **Logged In User**, I can **create a post** so that **I can share my latest updated**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the Create Post Link  | When I create a post it should be shared with other users | Pass  |
+
+#### As a **User**, I can **view a post** so that **I can learn more about that post**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click on a post  | When I click on a post I should be brought to the post detail page | Pass  |
+
+#### As a **Logged In User**, I can **like a post** so that **I can show my support to other users**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Like a post  | When I click the like button I should be able to like the post | Pass  |
+
+#### As a **User**, I can **view the most recent posts in order by the most recently created**  so that **keep up to date with new content**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the Discover page  | When I click the Discover page I should see the latest posts | Pass  |
+
+#### As a **User**, I can **search for posts that have tags** so that **I can find posts related to my search**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Input text into search bar  | When I search for a post I should be able to see that post | Pass  |
+
+#### As a **Logged In User**, I can see a list of posts from users that I follow so that I can keep up to date with their posts
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the Feed link  | When I click the feed link I should see posts from users that I follow | Pass  |
+
+#### As a **User**, I can **keep scrolling through posts automatically** so that **I don’t have to click next page**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Scroll through posts  | When scrolling through posts I should see new posts loading | Pass  |
+
+#### As a **User**, I can **view a post** so that **I can view a list of comments on posts**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click on post  | When I click on a post I should see a list of comments on that post | Pass  |
+
+#### As a **Post Owner**, I can **edit my post** so that **I can make any corrections or update the post**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the edit post menu  | When I click the edit post menu I should be brought to the edit post page | Pass  |
+
+#### As a **Logged In User**, I can **post a comment on a post** so that **I can share my opinion on the post**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Create a comment on a post  | When I post a comment I should see it listed | Pass  |
+
+#### As a **User**, I can **see the date on a comment** so that **I know how old the comment is**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Display comment date  | I should see when the comment was posted | Pass  |
+
+#### As a **User**, I can **comment on a post** so that **I can see what other users thought about the post**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Display a list of comments  | When I click on a post I should see a list of comments | Pass  |
+
+#### As a **Comment Owner**, I can **delete my own comment on a post** so that **I can control my own comments**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the comment menu on comment  | When I click the comment menu and click the delete the comment should be deleted | Pass  |
+
+#### As a **comment Owner**, I can **edit a comment on a post** so that **I can correct or update the comment**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the comment menu on comment  | When I click the comment menu and click the edit button I should be able to edit my comment  | Pass  |
+
+#### As a **User**, I can **view other users** so that **I can see their posts and learn more about them**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click on a user profile  | When I click on a user profile I should be brought to their page  | Pass  |
+
+#### As a **User**, I can **see a list of the most followed user profiles** so that **I can see which profiles are popular**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Display popular users list  | I should see the most popular users  | Pass  |
+
+#### As a **User**, I can **see stats on a specific user profile page** so that **I can learn more about the user**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click on user profile  | When I go to a user profile I should see stats about the user  | Pass  |
+
+#### As a **Logged In User**, I can **follow and unfollow other users** so that **I can see or remove posts by specific users**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the follow/unfollow button  | When I click the follow button I should be able to follow a user. When I click the unfollow button I should be able to unfollow the user  | Pass  |
+
+#### As a **Logged In User**, I can **edit my profile** so that **I can keep my profile update**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the edit profile menu  | When I click the edit profile menu I should be brought to the profile edit page  | Pass  |
+
+#### As a **User**, I can **update my username and password** so that **I can change my displayed name and keep my account secure**
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click edit profile menu  | I should be able to change username and password  | Pass  |
+
+#### As a **Logged In User**, I can **save a post** so that I can view it later
+
+| Action  |  Expected | Results  |
+|---|---|---|
+| Click the save post icon  | When I save a post it should be saved into the saves pages   | Pass  |
+
+### Bugs
+
+#### Fixed Bugs
+- When I was deploying my project I left out the "api/" at the start of my drf_api urls. The website wasn't working the way it should have. I put "api/" at the start every url and that fixed the error
+
+#### Known Bugs
+When I tried to add a success message alert it never showed up.
+
+## Acknowledgments 
+
+### Code Used
+- I based the backend code of the Code Institute drf_api module. Using this code helped me build the backend for this project. [drf_api GitHub Link](https://github.com/Code-Institute-Solutions/drf-api/tree/master)
+- I based the frontend code of the Code Institute Moments walkthrough project. Using this code helped me build the frontend for this project. [Moments Walkthrough Project Repo](https://github.com/Code-Institute-Solutions/moments/tree/bb6657e265fb18360b841e10d9d633dad06f4e5c)
+
+### Resources
+- [Unsplash](https://unsplash.com/) for the images used in this project.
+- [Undraw](https://undraw.co/) for the 404 illustration
+- [Font Awesome](https://fontawesome.com/) for the icons used in this project
+- [Google Fonts](https://fonts.google.com/) for the font used in this project
+
+
+
